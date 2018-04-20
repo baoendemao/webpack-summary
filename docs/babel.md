@@ -1,6 +1,6 @@
 #### 为什么需要babel
 * babel是一个js编译器，因为ES6在浏览器和node端的支持不好，它可以将ES6编译成兼容绝大多数的主流浏览器的ES5代码
-#### 如何在本地配置babel编译环境  （demo: demos/demo-babel/babel-1）
+#### 如何在本地配置babel编译环境  [demo点这里](https://github.com/baoendemao/webpack-summary/tree/master/demos/demo-babel/babel-1)
 * npm包
 ```
 // 初始化package.json
