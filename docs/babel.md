@@ -33,8 +33,16 @@ wl@wangli: ~/front-end/baoendemao-github/javascript-summary/demos/demo-babel $ b
 * 在webpack中，需要对应的loader来处理js，这里ES6编译的对应loader是babel-loader。所以除了npm包和.babelrc文件，还需要在webpack.config.js添加：
 ```
     module: {
+        // rules是一个数组
         rules: [
+            // 使用babel-loader来处理.js结尾的文件
             { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ }, 
         ]
     }
 ```
+
+#### babel-polyfill
+* Babel默认只转换新的JavaScript，而不转换新的API: Promise、Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol等， 此时可以使用babel-polyfill， 来提供对新的API的支持。
+
+
+

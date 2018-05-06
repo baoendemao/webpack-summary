@@ -1,0 +1,16 @@
+.img-container {
+    img {
+        width: 200px;
+    }
+}
+
+.img-container {
+    .img-bg {
+        background-image: url(./images/12.jpg);
+        width: 200px;
+        height: 200px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
