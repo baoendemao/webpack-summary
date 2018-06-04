@@ -9,4 +9,4 @@
 * [plugins插件](https://github.com/baoendemao/webpack-summary/tree/master/docs/plugins.md)
 * [loader](https://github.com/baoendemao/webpack-summary/tree/master/docs/loader.md)
 * [vue-cli](https://github.com/baoendemao/webpack-summary/tree/master/docs/vue-cli.md)
-
+* [其他配置](https://github.com/baoendemao/webpack-summary/tree/master/docs/other-config.md)

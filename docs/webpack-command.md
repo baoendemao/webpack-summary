@@ -24,7 +24,7 @@
         port: 9097,
         historyApiFallback: true,
         compress: true, 
-        proxy: {         // 远程接口代理
+        proxy: {         // 远程接口代理, 设置反向代理，解决跨域
             '/api': {
                 target: 'http://xx.xx.xx.xx:xxxx',
                 pathRewrite: {'^/api' : ''}
