@@ -49,3 +49,25 @@ new webpack.optimize.UglifyJsPlugin({
     }
 })
 ```
+
+* ProvidePlugin
+    * 自动加载模块，而不必到处 import 或 require 。
+```
+new webpack.ProvidePlugin({
+  identifier: 'module1'
+})
+or
+
+new webpack.ProvidePlugin({
+  identifier: ['module1', 'property1']
+})
+```
+* html-webpack-plugin
+```
+const HTMLPlugin = require('html-webpack-plugin')
+plugins: [
+    new HTMLPlugin({
+        template: 'src/index.html'
+    })
+]
+```
