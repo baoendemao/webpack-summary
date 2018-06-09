@@ -19,6 +19,7 @@
     ```
     * webpack.config.js的配置
     ```
+    // 也可以通过express和webpack-dev-middleware、webpack-hot-middleware来配置开发环境
     devServer: {
         inline: true,
         progress: true,
