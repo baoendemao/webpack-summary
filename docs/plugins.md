@@ -41,7 +41,7 @@
 * extract-text-webpack-plugin 
     * 从bundle中提取公共文本，如提取css， 生成单独的文件
 * UglifyJsPlugin
-    * 压缩JS， 打包后的体积变得更小
+    * 压缩JS， 打包后的体积变得更小, 一般用在生产环境下。
 ```
 new webpack.optimize.UglifyJsPlugin({
     compress: {
