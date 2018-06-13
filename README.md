@@ -10,3 +10,4 @@
 * [loader](https://github.com/baoendemao/webpack-summary/tree/master/docs/loader.md)
 * [vue-cli](https://github.com/baoendemao/webpack-summary/tree/master/docs/vue-cli.md)
 * [其他配置](https://github.com/baoendemao/webpack-summary/tree/master/docs/other-config.md)
+* [webpack4升级踩坑](https://github.com/baoendemao/webpack-summary/tree/master/docs/webpack-upgrade-4.md)

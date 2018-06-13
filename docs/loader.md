@@ -1,3 +1,7 @@
+loader允许webpack处理其他的文件类型，并将它们转换为项目依赖的模块。
+
+---
+
 #### css-loader  [demo点这里](https://github.com/baoendemao/webpack-summary/tree/master/demos/demo-loader)
 * 使得webpack可以识别css来打包
 * css-loader可以解析css文件中的@import，来实现在入口文件app.js中require css文件的功能，
@@ -29,4 +33,33 @@ npm install autoprefixer postcss-loader --save
     }
 }
 
+```
+#### loader配置格式
+
+test属性表明哪种文件类型的文件将被loader处理<br/>
+use属性表明使用哪种loader<br/>
+```
+module: {
+    rules: [
+        { test: /\.vue$/, use: 'vue-loader'}, 
+        { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/}, 
+        { test: /\.scss$/, use: [
+            { loader: 'vue-style-loader' }, 
+            { loader: 'css-loader' }, 
+            {
+                loader: 'postcss-loader',
+                options: {
+                    ident: 'postcss',
+                    plugins: (loader) => [
+                        require('autoprefixer')({
+                            browsers: ['last 3 versions']
+                        })  
+                    ]
+                }
+            },
+            { loader: 'sass-loader' }
+        ]},
+        { test: /\.(png|jpg|gif|svg)$/, use: 'url-loader', options: { limit: 10000, name: '[name].[ext]?[hash]' } }
+    ]
+}
 ```

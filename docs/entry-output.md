@@ -1,14 +1,15 @@
 #### 入口文件entry和出口文件output  
 * entry: 打包入口。 可以有一个或者多个。
-* output: 打包生成的文件名字，以及生成路径。可以有一个或者多个。
+* output: 打包生成的文件名字，以及dist路径。
 
 ```
 // 一个entry的写法：
 module.exports = {
     entry: './src/client-entry.js',
     output: {
+        // 后面生成的文件名字为[name].[chunkhash].js将生成在dist目录中
         path: path.resolve(__dirname, '../dist'),
-        publicPath: '/dist/',
+        publicPath: '/dist/',           
 
         // name即是entry里的name 
         // 使用Hash来命名文件，实现文件缓存的功能。当文件内容发生变化，文件名会随之改变。
@@ -16,18 +17,27 @@ module.exports = {
     }
 }
 
-// 多个entry，多个output的写法：
+// 单页面应用
 module.exports = {
     entry: {
-        app: './src/client-entry.js',
-        vendor: './src/vendors.js'
+        app: './src/client-entry.js',    // 单页面应用的入口点，不算下面的vendor
+        vendor: './src/vendors.js'       // CommonsChunkPlugin提取的第三方代码
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
-        publicPath: '/dist/',
+        publicPath: '/dist/',             
         filename: '[name].[chunkhash].js'      
     }
 }
+
+// 多页面应用
+module.exports = {
+  entry: {
+    pageOne: './src/pageOne/index.js',
+    pageTwo: './src/pageTwo/index.js',
+    pageThree: './src/pageThree/index.js'
+  }
+};
 
 ```
 </br>
