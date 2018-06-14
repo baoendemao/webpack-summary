@@ -47,7 +47,7 @@ module.exports = {
 #### 需要单独安装webpack-cli
 
 ```
-// 错误信息：
+// 升级webpack4的过程中如果不安装webpack-cli，会报出错误信息：
 One CLI for webpack must be installed. These are recommended choices, delivered as separate packages
 
 // 解决：
