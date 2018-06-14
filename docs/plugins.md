@@ -44,28 +44,52 @@ plugins用来执行一些任务，比如打包优化、公共代码提取、环�
     ```
 * extract-text-webpack-plugin 
     * 从bundle中提取公共文本，如提取css， 生成单独的文件
+    * 用法，如提取css：
+    ```
+    const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
+    module: {
+        rules: [
+        {
+            test: /\.scss$/,
+            // 因为这个插件需要干涉模块转换的内容，所以需要使用它对应的 loader
+            use: ExtractTextPlugin.extract({ 
+                fallback: 'vue-style-loader',
+                use: ['css-loader', 'sass-loader']
+            }), 
+        },
+        ],
+    },
+
+    plugins: [
+        new ExtractTextPlugin(filename: 'styles.[hash].css')
+    ]
+
+    ```
 * UglifyJsPlugin
     * 压缩JS， 打包后的体积变得更小, 一般用在生产环境下。
-```
-new webpack.optimize.UglifyJsPlugin({
-    compress: {
-        warnings: false,
-    }
-})
-```
+    * 用法
+    ```
+    new webpack.optimize.UglifyJsPlugin({
+        compress: {
+            warnings: false,
+        }
+    })
+    ```
 
 * ProvidePlugin
     * 自动加载模块，而不必到处 import 或 require 。
-```
-new webpack.ProvidePlugin({
-  identifier: 'module1'
-})
-or
+    * 用法
+    ```
+    new webpack.ProvidePlugin({
+    identifier: 'module1'
+    })
+    or
 
-new webpack.ProvidePlugin({
-  identifier: ['module1', 'property1']
-})
-```
+    new webpack.ProvidePlugin({
+    identifier: ['module1', 'property1']
+    })
+    ```
 * html-webpack-plugin
 ```
 const HTMLPlugin = require('html-webpack-plugin')
@@ -75,3 +99,12 @@ plugins: [
     })
 ]
 ```
+
+* DefinePlugin
+    * 定义环境变量
+    * 用法
+    ```
+    new webpack.DefinePlugin({
+        'process.env.APP_VERSION': JSON.stringify(pkg.version)
+    })
+    ```

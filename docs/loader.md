@@ -18,6 +18,10 @@ loader允许webpack处理其他的文件类型，并将它们转换为项目依�
 #### sass-loader
 * 加载sass或者scss文件，并编译成css
 
+#### vue-loader
+
+#### babel-loader
+
 #### postcss-loader和autoprefixer
 
 ```
@@ -36,6 +40,7 @@ npm install autoprefixer postcss-loader --save
 ```
 #### loader配置格式
 
+loader需要配置在module.rules字段中<br/>
 test属性表明哪种文件类型的文件将被loader处理<br/>
 use属性表明使用哪种loader<br/>
 ```

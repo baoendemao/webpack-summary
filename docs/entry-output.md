@@ -12,7 +12,7 @@ module.exports = {
         publicPath: '/dist/',           
 
         // name即是entry里的name 
-        // 使用Hash来命名文件，实现文件缓存的功能。当文件内容发生变化，文件名会随之改变。
+        // 使用Hash来命名文件，实现文件缓存的功能。当文件内容发生变化，文件名会随之改变 => 防止浏览器缓存
         filename: '[name].[chunkhash].js'     
     }
 }
