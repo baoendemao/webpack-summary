@@ -21,6 +21,7 @@ loader允许webpack处理其他的文件类型，并将它们转换为项目依�
 #### vue-loader
 
 #### babel-loader
+* 处理高版本的js
 
 #### postcss-loader和autoprefixer
 

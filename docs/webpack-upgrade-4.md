@@ -45,6 +45,7 @@ module.exports = {
     * 在webpack的config文件里： mode: "development"
 
 #### 需要单独安装webpack-cli
+* 在webpack4中，webpack-cli不作为webpack的依赖了，需要单独分别安装webpack和webpack-cli
 
 ```
 // 升级webpack4的过程中如果不安装webpack-cli，会报出错误信息：
@@ -52,4 +53,31 @@ One CLI for webpack must be installed. These are recommended choices, delivered 
 
 // 解决：
 npm install webpack-cli --save-dev
+```
+#### extract-text-webpack-plugin
+* 现在没有支持webpack4的稳定版本，如果要升级webpack4，需要安装其next版本
+```
+// 错误信息
+xxx.vue ： Module parse failed: Unexpected token (96:1)
+You may need an appropriate loader to handle this file type.
+
+// 解决：使用 4.0 beta 版，npm install --save-dev extract-text-webpack-plugin@next
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+if (process.env.NODE_ENV === 'production') {
+    // 配置loader
+    vueConfig.loaders = [{      
+            test: /\.scss$/,
+            use: ExtractTextPlugin.extract({
+                fallback: 'vue-style-loader',
+                use: ['css-loader', 'sass-loader']
+            })
+        }
+    ],
+
+    // 配置plugins
+    config.plugins.push(
+        new ExtractTextPlugin({filename: 'styles.[hash].css'})
+    )
+};
+
 ```

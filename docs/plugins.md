@@ -95,7 +95,7 @@ plugins用来执行一些任务，比如打包优化、公共代码提取、环�
 const HTMLPlugin = require('html-webpack-plugin')
 plugins: [
     new HTMLPlugin({
-        template: 'src/index.html'
+        template: 'src/index.html'    // 模板html
     })
 ]
 ```
