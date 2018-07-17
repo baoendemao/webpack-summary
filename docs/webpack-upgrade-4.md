@@ -1,7 +1,8 @@
-### webpack4的变化
+### webpack4
+
 #### 优势：零配置、打包速度优化
-通过这次webpack的升级（webpack 2.7.0升级到了 webpack 4.12.0），
-client端的时间从31991ms减小到了13311ms，server端的时间从11344ms减小到了9371ms。
+通过这次webpack的升级（从webpack 2.7.0升级到了 webpack 4.12.0），
+client端的打包时间从31991ms减小到了13311ms，server端的打包时间从11344ms减小到了9371ms。
 本篇文章主要介绍webpack4的变化以及在webpack4的升级过程中遇到的问题。
 
 #### node版本
@@ -161,7 +162,7 @@ Module not found: Error: Can't resolve 'style' in 'yyy.com'
 BREAKING CHANGE: It's no longer allowed to omit the '-loader' suffix when using loaders.
                  You need to specify 'style-loader' instead of 'style',
                  see https://webpack.js.org/migrate/3/#automatic-loader-module-name-extension-removed
- @ ./src/views/index/teambuild/teambuild.hot-collection.vue 4:0-84
+ @ ./xxx.vue 4:0-84
  @ ./node_modules/_babel-loader@7.1.4@babel-loader/lib!./node_modules/_vue-loader@15.2.4@vue-loader/lib??vue-loader-options!./src/views/index/index.vue?vue&type=script&lang=js
  @ ./src/views/index/index.vue?vue&type=script&lang=js
  @ ./src/views/index/index.vue
