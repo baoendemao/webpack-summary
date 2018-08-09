@@ -101,7 +101,7 @@ plugins: [
 ```
 
 * DefinePlugin
-    * 定义环境变量
+    * 定义环境变量。打包之后，将此变量传给node进程。
     * 用法
     ```
     new webpack.DefinePlugin({
