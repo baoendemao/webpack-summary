@@ -7,6 +7,7 @@ client端的打包时间从31991ms减小到了13311ms，server端的打包时间
 
 #### node版本
 webpack4将不再支持node4, 最低支持的node版本为6.11.5
+
 #### js不再是唯一的webpack可处理的类型
 webpack4支持5种模块类型：<br/>
 * javascript/auto: webpack 4之前支持的默认类型，支持所有的JS模块系统：CommonJS、AMD、ESM
